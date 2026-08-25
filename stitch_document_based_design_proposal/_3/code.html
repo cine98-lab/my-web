@@ -1,0 +1,74 @@
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"outline":"#6c7a79","inverse-primary":"#58d9d9","error-container":"#ffdad6","secondary-fixed":"#ffdad7","surface-bright":"#fff8f4","on-primary-fixed":"#002020","on-secondary-fixed-variant":"#703533","on-error":"#ffffff","on-secondary-fixed":"#390a0b","on-tertiary-container":"#443b2d","secondary":"#8d4c49","tertiary-fixed":"#f0e0cc","surface-container-high":"#f0e7df","on-surface-variant":"#3c4949","primary-container":"#2bb8b8","inverse-surface":"#34302b","surface-dim":"#e1d8d2","surface-container-lowest":"#ffffff","background":"#fff8f4","surface-variant":"#eae1da","surface-container":"#f5ece5","on-surface":"#1f1b17","secondary-container":"#ffaba7","on-background":"#1f1b17","inverse-on-surface":"#f8efe8","on-tertiary-fixed-variant":"#4f4537","error":"#ba1a1a","primary":"#006a6a","secondary-fixed-dim":"#ffb3af","on-primary":"#ffffff","tertiary":"#675d4d","primary-fixed-dim":"#58d9d9","on-secondary":"#ffffff","outline-variant":"#bbc9c8","on-tertiary-fixed":"#221a0e","primary-fixed":"#78f6f5","tertiary-fixed-dim":"#d3c4b1","on-primary-fixed-variant":"#004f50","on-primary-container":"#004344","tertiary-container":"#b2a592","on-error-container":"#93000a","surface":"#fff8f4","surface-tint":"#006a6a","on-tertiary":"#ffffff","on-secondary-container":"#7a3d3b","surface-container-low":"#fbf2eb","surface-container-highest":"#eae1da"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"16px","md":"24px","sm":"12px","margin-desktop":"auto","gutter":"20px","base":"8px","xs":"4px","xl":"80px","lg":"48px"},"fontFamily":{"body-lg":["Be Vietnam Pro"],"body-md":["Be Vietnam Pro"],"headline-lg":["Noto Serif"],"label-sm":["Be Vietnam Pro"],"display-lg":["Noto Serif"],"headline-md":["Noto Serif"]},"fontSize":{"body-lg":["18px",{"lineHeight":"28px","fontWeight":"500"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"300"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"500"}],"display-lg":["48px",{"lineHeight":"60px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}]}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&family=Noto+Serif:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface flex items-center justify-center min-h-screen"><main class="w-full max-w-[400px] px-md"><div class="flex flex-col w-full pb-xl">
+<section class="relative pt-xl pb-lg flex flex-col items-center text-center">
+<div class="absolute inset-0 bg-gradient-to-b from-surface-container to-surface pointer-events-none -z-10 rounded-b-3xl"></div>
+<div class="w-16 h-16 rounded-full bg-secondary-container/30 flex items-center justify-center mb-md text-secondary">
+<span class="material-symbols-outlined text-[32px]">mail</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-sm">산호나무의 엽서</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[300px] mx-auto">
+      느긋한 여행지의 공기를 담아,<br/>계절마다 새로운 소식을 보내드려요.
+    </p>
+</section>
+<section class="mt-lg">
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-outline-variant/30 p-md relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary-container/20 rounded-full blur-2xl -mr-10 -mt-10"></div>
+<div class="flex items-center gap-xs mb-md">
+<span class="material-symbols-outlined text-secondary text-sm">local_post_office</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Subscribe</span>
+</div>
+<form class="flex flex-col gap-md relative z-10">
+<div class="flex flex-col gap-xs">
+<label class="font-body-md text-body-md text-on-surface-variant" for="name">어떻게 불러드릴까요?</label>
+<input class="bg-surface-container/50 border-b border-outline-variant focus:border-secondary outline-none py-sm px-xs font-body-lg text-body-lg text-on-surface placeholder:text-on-surface-variant/50 transition-colors" id="name" placeholder="이름 또는 닉네임" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-body-md text-body-md text-on-surface-variant" for="email">어디로 보내드릴까요?</label>
+<input class="bg-surface-container/50 border-b border-outline-variant focus:border-secondary outline-none py-sm px-xs font-body-lg text-body-lg text-on-surface placeholder:text-on-surface-variant/50 transition-colors" id="email" placeholder="이메일 주소" type="email"/>
+</div>
+<div class="mt-sm flex gap-sm items-start">
+<div class="relative flex items-center justify-center mt-1">
+<input class="peer appearance-none w-5 h-5 border-2 border-outline-variant rounded-sm checked:bg-secondary checked:border-secondary transition-colors cursor-pointer" id="privacy" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-secondary text-sm opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<label class="font-body-md text-body-md text-on-surface-variant text-sm cursor-pointer leading-relaxed" for="privacy">
+            여행지에서 보내는 편지를 받기 위한 개인정보 수집에 동의합니다. (언제든 수취 거절이 가능해요.)
+          </label>
+</div>
+<button class="mt-sm bg-secondary text-on-secondary font-body-lg text-body-lg py-sm px-lg rounded-xl shadow-md active:shadow-sm active:translate-y-[1px] transition-all flex items-center justify-center gap-xs" type="button">
+<span>구독하기</span>
+<span class="material-symbols-outlined text-base">send</span>
+</button>
+</form>
+</div>
+</section>
+<section class="mt-xl">
+<div class="flex items-center gap-xs mb-sm">
+<span class="material-symbols-outlined text-primary text-sm">gallery_thumbnail</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">예약석 갤러리 엿보기</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">
+      구독자 분들께만 열리는 온라인 비밀 공간. 다른 여행자들의 남겨진 기록들을 감상해보세요.
+    </p>
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-md group cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A warm, sunlit interior of a coastal cafe with a polaroid camera on a wooden table, scattered photos, and a cup of steaming tea. The color palette features soft sand beige, gentle coral pink, and deep emerald blue, evoking a calm and nostalgic travel memory. Shot from a slightly high angle, soft natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPPLYGUJ2C08uhjOqZsSy9OTO5Jq2GTHn58ld_sncWAUBQd-2MVI1LELPldKcqK5bkqWtzBQiquDYot6lmR1Ra53fj4UHtg6eIFZKycREJIctEjApkWFFjLlUDJ-BSbP-8XUTCJjeAdD93auRrihBsGW0Uh9YvxW9-C7EhhHu0QNremhMBCgr-y1V88-IlaLFoeoQpxerod7Mn3gk3rRhehPckIIGousO0v-yX562-N1MEDaNCp1PCjA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent flex flex-col justify-end p-md">
+<div class="flex items-center gap-xs mb-xs">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm text-inverse-on-surface uppercase tracking-wider">Preview</span>
+</div>
+<p class="font-body-lg text-body-lg text-inverse-on-surface">오키나와에서의 잔잔한 오후</p>
+</div>
+</div>
+</section>
+<div class="mt-xl text-center border-t border-outline-variant/30 pt-lg relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-surface px-sm text-outline-variant">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+      "여행의 끝은 새로운 여행의 시작이니까요.<br/>곧 편지로 만나요."
+    </p>
+<p class="font-headline-md text-headline-md text-primary mt-sm">Coral Tree</p>
+</div>
+</div></main></body></html>

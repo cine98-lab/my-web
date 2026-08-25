@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>메뉴판 — 산호나무</title>
+<meta name="description" content="산호나무의 전체 메뉴판. 말차, 오키나와 자색고구마 디저트, 사진 열매를 비롯한 차와 디저트, 사장님 추천 조합.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== 아이콘 스프라이트 (icons.txt 와 동일하게 유지) ===== -->
+<svg class="sprite" aria-hidden="true">
+  <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 22V9"/><path d="M12 14 8.5 11M12 11l3.5-3"/><rect x="14.5" y="3" width="6" height="6" rx="1"/><rect x="3.5" y="6.5" width="6" height="6" rx="1"/><path d="M9 22h6"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 13.5 13.5 8.5 15.5 10.5 10.5z"/></symbol>
+  <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="m21 16-4.5-4.5L7 21"/></symbol>
+  <symbol id="i-frame" viewBox="0 0 24 24"><path d="M12 2v3"/><rect x="5" y="5" width="14" height="16" rx="2"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 8h12v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 9h2.5a2.5 2.5 0 0 1 0 5H16"/><path d="M7 2v2.5M11 2v2.5"/></symbol>
+  <symbol id="i-drink" viewBox="0 0 24 24"><path d="M6 3h12l-1.5 8.5a4 4 0 0 1-4 3.5h-1a4 4 0 0 1-4-3.5z"/><path d="M12 15v6M9 21h6"/></symbol>
+  <symbol id="i-cake" viewBox="0 0 24 24"><path d="M4 20h16v-6a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3z"/><path d="M4 16c1.5 1.2 2.5 1.2 4 0s2.5-1.2 4 0 2.5 1.2 4 0"/><path d="M12 8V5.5"/><circle cx="12" cy="4" r="1"/></symbol>
+  <symbol id="i-cookie" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1"/><circle cx="14.5" cy="9.5" r="1"/><circle cx="13" cy="15" r="1"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M4 20c0-8 5-13 16-14 0 10-5 15-12 15-2 0-4-.4-4-1z"/><path d="M9 17c1.5-4 4-6.5 8-8"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M3 8c2-1.6 4-1.6 6 0s4 1.6 6 0 4-1.6 6 0"/><path d="M3 13c2-1.6 4-1.6 6 0s4 1.6 6 0 4-1.6 6 0"/><path d="M3 18c2-1.6 4-1.6 6 0s4 1.6 6 0 4-1.6 6 0"/></symbol>
+  <symbol id="i-child" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5v7M8 11h8"/><path d="m9 21 3-6 3 6"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.5 7.2L4 20l.9-4.3A8 8 0 1 1 20 12z"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M11 3l1.7 4.8L17.5 9.5l-4.8 1.7L11 16l-1.7-4.8L4.5 9.5l4.8-1.7z"/><path d="M18 15.5l.6 1.9 1.9.6-1.9.6-.6 1.9-.6-1.9-1.9-.6 1.9-.6z"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11.5V16"/><path d="M12 8h.01"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13"/><path d="m12.5 6 6 6-6 6"/></symbol>
+</svg>
+
+<div class="postcard-frame">
+
+<nav class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg class="ico mark"><use href="#i-tree"/></svg>
+      <span class="name">산호나무</span>
+    </a>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html">첫 화면</a>
+      <a href="index.html#story">시작 이야기</a>
+      <a href="index.html#space">공간</a>
+      <a href="menu.html" class="active">메뉴판</a>
+      <a href="subscribe.html">소식받기</a>
+      <a href="index.html#hours">영업시간</a>
+    </div>
+    <button class="navtoggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navlinks">
+      <svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <svg class="ico mark-lg"><use href="#i-cup"/></svg>
+    <div class="sec-label" style="color:var(--secondary);">Signature Pairings</div>
+    <h1 class="t-display">여행의 맛을 담은<br>대표 메뉴</h1>
+    <p class="lead">한 모금의 차, 한 입의 디저트로 떠나는 짧은 여행.</p>
+  </div>
+</header>
+
+<!-- ================= 모자이크 ================= -->
+<section class="tight">
+  <div class="wrap reveal">
+    <div class="mosaic">
+      <div class="tile main">
+        <div class="photo">
+          <img src="img/menu-set.png" alt="나무 테이블 위에 놓인 자색고구마 타르트와 음료, 그 옆에 펼쳐진 오키나와 지도">
+        </div>
+        <div class="scrim"></div>
+        <div class="body">
+          <div class="tags">
+            <span class="tag">시그니처</span>
+            <span class="tag">오키나와</span>
+          </div>
+          <h3 class="t-headline">산호나무 한 상</h3>
+          <p>일본에서 자주 마신 말차와, 오키나와에서 먹었던 자색 고구마 디저트.
+             그리고 나무에서 찾아가는 사진 열매까지.</p>
+        </div>
+      </div>
+
+      <div class="side">
+        <div class="tile">
+          <div class="photo pos-tart">
+            <img src="img/menu-set.png" alt="오키나와 도자기 접시에 담긴 자색고구마 타르트">
+          </div>
+          <div class="scrim"></div>
+          <div class="body">
+            <h3 class="t-title">오키나와 자색고구마 디저트</h3>
+            <p>오키나와의 흙이 빚어낸 달콤함</p>
+            <!-- [지어냄] 가격 -->
+            <div class="price">7,500원</div>
+          </div>
+        </div>
+
+        <div class="tile">
+          <div class="photo pos-tree">
+            <img src="img/hero-tree.png" alt="여행 나무 가지에 열매처럼 걸린 손님들의 사진">
+          </div>
+          <div class="scrim"></div>
+          <div class="body">
+            <h3 class="t-title">사진 열매</h3>
+            <p>나무에서 찾아가는 내 여행 사진</p>
+            <div class="price">12,000원</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 대표 메뉴 사연 ================= -->
+<section id="signature" class="tint">
+  <div class="wrap narrow reveal">
+    <div class="sec-head">
+      <div class="sec-label">Story</div>
+      <h2 class="t-headline">세 가지에는 사연이 있습니다</h2>
+    </div>
+
+    <article class="sig">
+      <div class="sig-no">01</div>
+      <div>
+        <h3 class="t-title">말차</h3>
+        <!-- [지어냄] 가격 -->
+        <div class="price">6,500원</div>
+        <p>일본을 다니면서 자주 마신 차입니다. 이 카페의 기본이 되는 메뉴입니다.</p>
+      </div>
+    </article>
+
+    <article class="sig">
+      <div class="sig-no">02</div>
+      <div>
+        <h3 class="t-title">오키나와 자색고구마 디저트</h3>
+        <div class="price">7,500원</div>
+        <p>오키나와에서 먹었던 자색 고구마 디저트를 옮겨왔습니다.
+           오키나와 북부 이야기를 꺼낼 때, 손님 앞에 이 디저트가 놓여 있으면 좋겠습니다.</p>
+      </div>
+    </article>
+
+    <article class="sig">
+      <div class="sig-no">03</div>
+      <div>
+        <h3 class="t-title">사진 열매</h3>
+        <div class="price">12,000원 <small>액자 1개 · 온라인 사전 주문</small></div>
+        <p>손님의 여행 사진을 나무에 걸 수 있는 액자 형태로 만들어 드립니다.
+           온라인으로 미리 주문하시면, 카페에 방문했을 때 나무에 열린 내 사진을 찾아가는 방식입니다.
+           나무와 어울리는 액자에 매답니다.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= 전체 메뉴 ================= -->
+<section>
+  <div class="wrap" style="max-width:1000px;">
+    <div class="reveal">
+      <div class="rule">
+        <h2 class="t-headline"><span class="hash">#</span> 전체 메뉴</h2>
+      </div>
+      <p class="muted" style="max-width:640px;margin-bottom:var(--lg);">
+        오래 앉아 이야기 나누는 곳이라, 부담 없이 한 잔 더 시킬 수 있는 것들로 채웁니다.</p>
+    </div>
+
+    <!-- [지어냄] 세부 품목 이름과 가격. 갈래(커피·에이드·쿠키·케이크)는 사장님이 정하신 대로입니다 -->
+    <div class="reveal">
+      <div class="cat">
+        <div class="cat-head">
+          <svg class="ico ico-lg"><use href="#i-cup"/></svg>
+          <h3 class="t-title">Coffee</h3>
+        </div>
+        <div class="rows">
+          <div class="row"><span class="name"><b>아메리카노</b></span><span class="dots"></span><span class="price">4,500원</span></div>
+          <div class="row"><span class="name"><b>카페라떼</b></span><span class="dots"></span><span class="price">5,000원</span></div>
+          <div class="row"><span class="name"><b>여행 나무 라떼</b><em>나뭇가지 모양 라떼아트</em></span><span class="dots"></span><span class="price">5,500원</span></div>
+        </div>
+      </div>
+
+      <div class="cat">
+        <div class="cat-head">
+          <svg class="ico ico-lg"><use href="#i-drink"/></svg>
+          <h3 class="t-title">Ade</h3>
+        </div>
+        <div class="rows">
+          <div class="row"><span class="name"><b>시콰사 에이드</b><em>오키나와 감귤로 만든 에이드</em></span><span class="dots"></span><span class="price">6,000원</span></div>
+          <div class="row"><span class="name"><b>산호빛 소다 에이드</b><em>오키나와 바다색을 닮은 파란 에이드</em></span><span class="dots"></span><span class="price">6,000원</span></div>
+        </div>
+      </div>
+
+      <div class="cat">
+        <div class="cat-head">
+          <svg class="ico ico-lg"><use href="#i-cookie"/></svg>
+          <h3 class="t-title">Cookie</h3>
+        </div>
+        <div class="rows">
+          <div class="row"><span class="name"><b>바다소금 쿠키</b><em>오키나와 소금으로 구운 쿠키</em></span><span class="dots"></span><span class="price">3,000원</span></div>
+          <div class="row"><span class="name"><b>산호 쿠키</b><em>산호초 모양. 나무 아래에서 먹기 좋은 크기</em></span><span class="dots"></span><span class="price">3,500원</span></div>
+        </div>
+      </div>
+
+      <div class="cat">
+        <div class="cat-head">
+          <svg class="ico ico-lg"><use href="#i-cake"/></svg>
+          <h3 class="t-title">Cake</h3>
+        </div>
+        <div class="rows">
+          <div class="row"><span class="name"><b>말차 롤케이크</b><em>대표 메뉴인 말차를 케이크로</em><span class="badge-sm">BEST</span></span><span class="dots"></span><span class="price">6,500원</span></div>
+          <div class="row"><span class="name"><b>흑당 시폰 케이크</b></span><span class="dots"></span><span class="price">6,000원</span></div>
+        </div>
+      </div>
+
+      <div class="cat">
+        <div class="cat-head">
+          <svg class="ico ico-lg"><use href="#i-compass"/></svg>
+          <h3 class="t-title">그 외</h3>
+        </div>
+        <div class="rows">
+          <div class="row"><span class="name"><b>여행지 성향검사</b><em>MBTI나 지문검사처럼, 나에게 맞는 여행지를 찾습니다</em></span><span class="dots"></span><span class="price free">무료</span></div>
+          <div class="row"><span class="name"><b>여행 컨설팅 30분</b><em>구독 회원에게 드립니다</em></span><span class="dots"></span><span class="price free">무료</span></div>
+        </div>
+      </div>
+
+      <div class="notice">
+        <svg class="ico"><use href="#i-info"/></svg>
+        <p><b>여행지 성향검사</b>는 음료를 주문하신 분께 무료로 드리고,
+           <b>여행 컨설팅 30분</b>은 구독 회원께 무료입니다.
+           컨설팅은 평일 14:00–18:00, 주말 11:00–17:00에 예약하실 수 있습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 추천 조합 ================= -->
+<section class="tint-low">
+  <div class="wrap reveal">
+    <div class="sec-head center">
+      <svg class="ico ico-lg" style="color:var(--secondary);margin:0 auto var(--sm);"><use href="#i-sparkle"/></svg>
+      <div class="sec-label">사장님 추천 조합</div>
+      <h2 class="t-headline">이렇게 시키면 이야기가 길어집니다</h2>
+      <p class="muted">따로 시키는 것보다 조금씩 덜 받습니다.
+         어떤 날에 오셨는지에 맞춰 네 가지로 묶어뒀습니다.</p>
+    </div>
+
+    <!-- [지어냄] 추천 조합 네 가지 전부 -->
+    <div class="grid-4 stagger">
+      <div class="combo">
+        <div class="ico-badge"><svg class="ico ico-lg"><use href="#i-wave"/></svg></div>
+        <h3>오키나와 한 상</h3>
+        <p class="desc">오키나와 북부 이야기를 들으실 분께. 이야기가 길어지는 조합입니다.</p>
+        <div class="foot">
+          <span class="items">말차 + 자색고구마 디저트</span>
+          <span class="sum">13,000원<span class="was">따로 14,000원</span></span>
+        </div>
+      </div>
+
+      <div class="combo rose">
+        <div class="ico-badge rose"><svg class="ico ico-lg"><use href="#i-child"/></svg></div>
+        <h3>아이와 함께</h3>
+        <p class="desc">아이가 나무 아래에서 쿠키를 먹는 동안, 부모님은 다음 여행지를 고릅니다.</p>
+        <div class="foot">
+          <span class="items">시콰사 에이드 + 산호 쿠키</span>
+          <span class="sum">9,000원<span class="was">따로 9,500원</span></span>
+        </div>
+      </div>
+
+      <div class="combo wood">
+        <div class="ico-badge wood"><svg class="ico ico-lg"><use href="#i-chat"/></svg></div>
+        <h3>상담 오는 날</h3>
+        <p class="desc">여행 컨설팅 예약하신 분들이 가장 많이 시키는 조합입니다.</p>
+        <div class="foot">
+          <span class="items">아메리카노 + 말차 롤케이크</span>
+          <span class="sum">10,500원<span class="was">따로 11,000원</span></span>
+        </div>
+      </div>
+
+      <div class="combo">
+        <div class="ico-badge"><svg class="ico ico-lg"><use href="#i-frame"/></svg></div>
+        <h3>사진 찾아가는 날</h3>
+        <p class="desc">나무에서 내 사진을 떼어 가는 날, 한 잔 하고 가시라고 묶었습니다.</p>
+        <div class="foot">
+          <span class="items">사진 열매 + 여행 나무 라떼</span>
+          <span class="sum">17,000원<span class="was">따로 17,500원</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions center">
+      <a class="btn" href="subscribe.html">
+        <svg class="ico"><use href="#i-mail"/></svg>
+        새 메뉴 소식 받기
+      </a>
+      <a class="btn ghost" href="index.html">첫 화면으로</a>
+    </div>
+  </div>
+</section>
+
+<footer id="hours">
+  <div class="wrap reveal">
+    <h2 class="t-headline">영업시간 &middot; 찾아오시는 길</h2>
+    <div class="foot-grid stagger">
+      <div>
+        <h3>Open</h3>
+        <!-- [지어냄] 영업시간 전체 -->
+        <table class="hours">
+          <tr><td>화 – 금</td><td>11:00 – 21:00</td></tr>
+          <tr><td>토 · 일</td><td>10:00 – 21:00</td></tr>
+          <tr><td>월요일</td><td class="closed">휴무</td></tr>
+        </table>
+        <p class="foot-note">
+          라스트 오더 20:30<br>
+          매달 마지막 주 월·화는 문을 닫습니다.<br>
+          사장님이 여행을 다녀오는 주간입니다.<br><br>
+          여행 컨설팅 예약 — 평일 14:00–18:00 / 주말 11:00–17:00
+        </p>
+      </div>
+      <div>
+        <h3>Find us</h3>
+        <!-- [지어냄] 주소 -->
+        <p class="foot-note" style="margin-top:0;">
+          서울시 마포구 연남로 24, 1층<br>
+          경의선숲길 끝, 흰 건물 1층.<br>
+          창밖으로 나무가 보이는 곳입니다.
+        </p>
+        <ul style="margin-top:var(--sm);">
+          <li>02-1234-5678</li>
+          <li>hello@coraltree.cafe</li>
+          <li>카카오톡 채널 @산호나무</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Follow</h3>
+        <!-- [지어냄] SNS 계정 -->
+        <ul>
+          <li><a href="https://instagram.com/coraltree_cafe">인스타그램 @coraltree_cafe</a></li>
+          <li><a href="#">유튜브 산호나무 TV</a></li>
+          <li><a href="#">블로그 blog.coraltree.cafe</a></li>
+        </ul>
+        <p class="foot-note">여행 나무에 새로 열린 사진과 사연,<br>사장님이 다녀온 여행지 영상을 올립니다.</p>
+      </div>
+    </div>
+    <div class="copyright">© 산호나무 &nbsp;·&nbsp; 가격과 연락처는 아직 정해지지 않은 가상의 정보입니다</div>
+  </div>
+</footer>
+
+</div><!-- /postcard-frame -->
+
+<script src="app.js"></script>
+</body>
+</html>

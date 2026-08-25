@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>산호나무 — 여행의 추억과 설렘을 차와 디저트와 함께</title>
+<meta name="description" content="여행의 추억과 설렘을 차와 디저트와 함께 나눌 수 있는 공간. 오키나와 북부 이야기를 들려드리는 여행 카페 산호나무.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== 아이콘 스프라이트 (icons.txt 와 동일하게 유지) ===== -->
+<svg class="sprite" aria-hidden="true">
+  <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 22V9"/><path d="M12 14 8.5 11M12 11l3.5-3"/><rect x="14.5" y="3" width="6" height="6" rx="1"/><rect x="3.5" y="6.5" width="6" height="6" rx="1"/><path d="M9 22h6"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 13.5 13.5 8.5 15.5 10.5 10.5z"/></symbol>
+  <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="m21 16-4.5-4.5L7 21"/></symbol>
+  <symbol id="i-frame" viewBox="0 0 24 24"><path d="M12 2v3"/><rect x="5" y="5" width="14" height="16" rx="2"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 8h12v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 9h2.5a2.5 2.5 0 0 1 0 5H16"/><path d="M7 2v2.5M11 2v2.5"/></symbol>
+  <symbol id="i-cake" viewBox="0 0 24 24"><path d="M4 20h16v-6a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3z"/><path d="M4 16c1.5 1.2 2.5 1.2 4 0s2.5-1.2 4 0 2.5 1.2 4 0"/><path d="M12 8V5.5"/><circle cx="12" cy="4" r="1"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M4 20h4L20 8l-4-4L4 16z"/><path d="m14.5 5.5 4 4"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M4 20c0-8 5-13 16-14 0 10-5 15-12 15-2 0-4-.4-4-1z"/><path d="M9 17c1.5-4 4-6.5 8-8"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M3 8c2-1.6 4-1.6 6 0s4 1.6 6 0 4-1.6 6 0"/><path d="M3 13c2-1.6 4-1.6 6 0s4 1.6 6 0 4-1.6 6 0"/><path d="M3 18c2-1.6 4-1.6 6 0s4 1.6 6 0 4-1.6 6 0"/></symbol>
+  <symbol id="i-sound" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 9a4 4 0 0 1 0 6"/><path d="M18.5 6.5a8 8 0 0 1 0 11"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13"/><path d="m12.5 6 6 6-6 6"/></symbol>
+</svg>
+
+<div class="postcard-frame">
+
+<nav class="topbar">
+  <div class="wrap">
+    <!-- [지어냄] 가게 이름 / 내비게이션은 세 페이지 동일 -->
+    <a class="brand" href="index.html">
+      <svg class="ico mark"><use href="#i-tree"/></svg>
+      <span class="name">산호나무</span>
+    </a>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html" class="active">첫 화면</a>
+      <a href="index.html#story">시작 이야기</a>
+      <a href="index.html#space">공간</a>
+      <a href="menu.html">메뉴판</a>
+      <a href="subscribe.html">소식받기</a>
+      <a href="index.html#hours">영업시간</a>
+    </div>
+    <button class="navtoggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navlinks">
+      <svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ================= 히어로 ================= -->
+<header class="hero" id="top">
+  <div class="bg">
+    <div class="photo">
+      <img src="img/hero-tree.png" alt="카페 한가운데 서 있는 여행 나무. 가지마다 손님들의 사진이 열매처럼 걸려 있고, 창으로 햇빛이 들어옵니다.">
+    </div>
+  </div>
+  <div class="scrim"></div>
+  <div class="inner">
+    <div class="wrap">
+      <span class="badge">
+        <svg class="ico"><use href="#i-compass"/></svg>
+        오키나와의 바람을 담은 공간
+      </span>
+      <h1 class="t-display">여행의 추억이<br>열매처럼 열리는 곳</h1>
+      <p class="lead">여행의 추억과 설렘을 차와 디저트와 함께 나눌 수 있는 공간</p>
+      <!-- [지어냄] 이름의 유래 -->
+      <p class="sub">오키나와 북부의 산호초와, 가게 한가운데 서 있는 여행 나무에서 따온 이름입니다.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ================= 시작 이야기 ================= -->
+<section id="story">
+  <div class="wrap reveal">
+    <div class="split">
+      <div class="stack">
+        <div class="photo ratio-tall pos-sea">
+          <img src="img/okinawa.png" alt="오키나와 북부 얀바루의 에메랄드빛 바다와 숲, 그 사이에 숨은 얕은 백사장">
+        </div>
+        <div class="polaroid">
+          <div class="photo ratio-square pos-map">
+            <img src="img/menu-set.png" alt="테이블에 펼쳐놓은 오키나와 지도">
+          </div>
+          <div class="label">오키나와의 기억</div>
+        </div>
+      </div>
+
+      <div class="col-text">
+        <span class="chip">
+          <svg class="ico"><use href="#i-compass"/></svg>
+          Travel Consultant
+        </span>
+        <h2 class="t-headline">오키나와 북부의<br>바람을 싣고</h2>
+        <p class="t-body-lg muted">저는 여행을 좋아합니다. 그래서 언젠가는 여행에 관련된 카페를 해보고 싶었습니다.</p>
+        <p class="muted">여행을 좋아하는 손님들이 와서 차와 디저트를 곁들여 먹으며 여행 정보를 얻고,
+           여행에 대한 이야기를 자유롭게 나눌 수 있는 곳.
+           저는 그곳에서 손님이 가고 싶어 하는 여행지에 대해 컨설턴트를 해주는 역할을 합니다.</p>
+        <p class="muted">해안가의 바닷물이 너무 투명해서 발 아래 모든 것이 선명하게 보입니다. 물론 물고기도요.
+           백사장에 이어진 해변은 수심이 얕아서, 아이들과 해수욕하기에 최적의 장소입니다.
+           그리고 배를 타고 나가면 멋진 산호초 섬에서 스노클링을 할 수 있는 스팟이 있습니다.</p>
+        <div class="actions">
+          <a class="btn ghost" href="subscribe.html">
+            여행 이야기 받아보기
+            <svg class="ico"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 손님 이야기 ================= -->
+<section class="tint">
+  <div class="wrap reveal">
+    <div class="quote-block">
+      <div class="sec-label">이런 분들이 옵니다</div>
+      <!-- [지어냄] "일주일에 한 번쯤" 빈도 -->
+      <p class="muted">30대에서 40대, 아이와 함께 오는 분들입니다.
+         지난 여행을 추억하고, 새로운 여행을 계획하려고 이 카페에 옵니다.
+         일주일에 한 번쯤, 아이 손을 잡고 들어옵니다.</p>
+      <blockquote>사장님 안녕하세요. 이번 여름에 갈 여행지를 고민하고 있어요. 아이와 같이 갈 곳을 추천해주실 수 있나요?</blockquote>
+      <p class="muted" style="margin-top:var(--md);font-size:.94rem;">
+        예약석에 앉으면 미리 지정해둔 사진 — 작년에 다녀온 여행 사진이 화면에 떠 있습니다.<br>
+        그 사진을 보다가 저를 부릅니다. 이 한마디가 우리 가게의 시작점입니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 여행 나무 3단계 ================= -->
+<section id="space">
+  <div class="wrap reveal">
+    <div class="sec-head center">
+      <div class="sec-label">여행 나무</div>
+      <h2 class="t-headline">추억이 자라는 산호나무</h2>
+      <p class="muted">카페 중앙에 서 있는 진짜 나무입니다.
+         여러분의 여행 이야기가 모여 한 그루의 나무가 됩니다.</p>
+    </div>
+
+    <div class="grid-3 stagger">
+      <div class="card center">
+        <div class="ico-badge"><svg class="ico ico-lg"><use href="#i-pencil"/></svg></div>
+        <h3 class="t-title">기록하기</h3>
+        <p>사진에 담긴 그날의 이야기를 사연으로 적습니다.</p>
+        <div class="step-no">STEP 01</div>
+      </div>
+      <div class="card center">
+        <div class="ico-badge rose"><svg class="ico ico-lg"><use href="#i-photo"/></svg></div>
+        <h3 class="t-title">사진 달기</h3>
+        <p>구독하고 공유한 사진 중에서 인화할 것을 직접 고릅니다.</p>
+        <div class="step-no">STEP 02</div>
+      </div>
+      <div class="card center">
+        <div class="ico-badge wood"><svg class="ico ico-lg"><use href="#i-leaf"/></svg></div>
+        <h3 class="t-title">열매 맺기</h3>
+        <p>나무에 걸어두면 다른 손님들이 그 사연에 좋아요를 남깁니다.</p>
+        <div class="step-no">STEP 03</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 공간 ================= -->
+<section class="tint-low">
+  <div class="wrap reveal">
+    <div class="split">
+      <div class="col-text">
+        <div class="sec-label">공간</div>
+        <h2 class="t-headline">왁자지껄,<br>사람 냄새 나는 공간</h2>
+        <p class="muted">조용한 카페도 좋지만, 산호나무는 조금 소란스럽습니다.
+           옆 테이블의 여행 이야기에 귀 기울이고, 처음 보는 사람들과 목적지 정보를 나누는 곳입니다.</p>
+        <p class="muted">한쪽에는 여행지 성향검사 코너가 있습니다.
+           MBTI나 지문검사처럼, 나에게 맞는 여행지를 찾아보는 코너입니다.</p>
+        <div class="senses">
+          <span class="sense"><svg class="ico"><use href="#i-cup"/></svg><b>냄새</b> 커피 냄새</span>
+          <span class="sense"><svg class="ico"><use href="#i-sound"/></svg><b>소리</b> 사람들의 이야기 소리</span>
+          <span class="sense"><svg class="ico"><use href="#i-sun"/></svg><b>분위기</b> 활기찬 곳</span>
+        </div>
+        <p class="note">조용한 카페는 아닙니다. 여행 이야기가 오가는 곳이니까요.</p>
+      </div>
+
+      <div>
+        <div class="photo ratio-wide">
+          <svg class="ico ico-lg"><use href="#i-frame"/></svg>
+          <span class="cap">
+            <b>예약석 디지털 갤러리</b>
+            테이블 위 화면에 손님의 여행 사진이 떠 있고,
+            그 옆에 찻잔이 자연스럽게 놓인 컷.
+          </span>
+          <!-- <img src="images/gallery-seat.jpg" alt="예약석 화면에 떠 있는 손님의 여행 사진"> -->
+        </div>
+        <div class="card" style="margin-top:var(--md);">
+          <h3 class="t-title">구독하면 자리에 사진이 떠 있습니다</h3>
+          <p>카페를 구독하고 여행지 사진을 공유하면, 그 사진들을 예약석에서 디지털 갤러리로 보여드립니다.
+             인화하고 싶은 사진, 자리에 앉았을 때 띄우고 싶은 사진은 직접 지정하시면 됩니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 대표 메뉴 ================= -->
+<section>
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <div class="sec-label">Signature</div>
+      <h2 class="t-headline">여행을 맛보다</h2>
+      <p class="muted">오키나와에서 가져온 세 가지로 시작합니다.</p>
+    </div>
+
+    <div class="grid-3 stagger">
+      <div class="card">
+        <div class="photo ratio-square card-top">
+          <svg class="ico"><use href="#i-cup"/></svg>
+          <span class="cap"><b>말차</b>45도 각도. 옆에 여행 지도나 빈티지 티스푼.</span>
+        </div>
+        <h3 class="t-title">말차</h3>
+        <p>일본을 다니면서 자주 마신 차입니다. 이 카페의 기본이 되는 메뉴입니다.</p>
+        <!-- [지어냄] 가격 -->
+        <p class="card-price">6,500원</p>
+      </div>
+
+      <div class="card">
+        <div class="photo ratio-square card-top pos-tart">
+          <img src="img/menu-set.png" alt="오키나와 도자기 접시에 담긴 자색고구마 타르트">
+        </div>
+        <h3 class="t-title">오키나와 자색고구마 디저트</h3>
+        <p>오키나와에서 먹었던 자색 고구마 디저트를 옮겨왔습니다.
+           북부 이야기를 꺼낼 때 손님 앞에 놓여 있으면 좋겠습니다.</p>
+        <p class="card-price">7,500원</p>
+      </div>
+
+      <div class="card">
+        <div class="photo ratio-square card-top pos-tree">
+          <img loading="lazy" decoding="async" src="img/hero-tree.png" alt="여행 나무 가지에 열매처럼 걸린 사진들">
+        </div>
+        <h3 class="t-title">사진 열매</h3>
+        <p>손님의 여행 사진을 나무에 걸 수 있는 액자로 만들어 드립니다.
+           미리 주문하시면 방문했을 때 찾아가시면 됩니다.</p>
+        <p class="card-price">12,000원</p>
+      </div>
+    </div>
+
+    <div class="actions center">
+      <a class="btn" href="menu.html">
+        전체 메뉴 보기
+        <svg class="ico"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 우리가 지키는 것 ================= -->
+<section class="tint">
+  <div class="wrap narrow reveal">
+    <div class="sec-head">
+      <div class="sec-label">우리가 지키는 것</div>
+      <h2 class="t-headline">이건 다른 카페에서<br>할 수 없는 일입니다</h2>
+    </div>
+
+    <div class="grid-2 stagger">
+      <div class="card">
+        <!-- 사장님 확인 대기: 이 항목을 뺄지 아직 정해지지 않음 -->
+        <div class="ico-badge rose"><svg class="ico ico-lg"><use href="#i-pencil"/></svg></div>
+        <h3 class="t-title">손님의 여행 사연을 웹툰으로 만들어 전시합니다</h3>
+        <p>사진 한 장과 짧은 사연이, 그림이 되어 벽에 걸립니다.</p>
+      </div>
+      <div class="card">
+        <!-- [지어냄] -->
+        <div class="ico-badge wood"><svg class="ico ico-lg"><use href="#i-compass"/></svg></div>
+        <h3 class="t-title">가보지 않은 곳을 가본 것처럼 말하지 않습니다</h3>
+        <p>제가 직접 다녀온 곳은 제 경험으로, 아닌 곳은 아니라고 말합니다.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="btn" href="subscribe.html">
+        <svg class="ico"><use href="#i-mail"/></svg>
+        소식 받아보기
+      </a>
+      <a class="btn ghost" href="menu.html">메뉴판 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 푸터 ================= -->
+<footer id="hours">
+  <div class="wrap reveal">
+    <h2 class="t-headline">영업시간 &middot; 찾아오시는 길</h2>
+    <div class="foot-grid stagger">
+      <div>
+        <h3>Open</h3>
+        <!-- [지어냄] 영업시간 전체 -->
+        <table class="hours">
+          <tr><td>화 – 금</td><td>11:00 – 21:00</td></tr>
+          <tr><td>토 · 일</td><td>10:00 – 21:00</td></tr>
+          <tr><td>월요일</td><td class="closed">휴무</td></tr>
+        </table>
+        <p class="foot-note">
+          라스트 오더 20:30<br>
+          매달 마지막 주 월·화는 문을 닫습니다.<br>
+          사장님이 여행을 다녀오는 주간입니다.<br><br>
+          여행 컨설팅 예약 — 평일 14:00–18:00 / 주말 11:00–17:00
+        </p>
+      </div>
+      <div>
+        <h3>Find us</h3>
+        <!-- [지어냄] 주소 -->
+        <p class="foot-note" style="margin-top:0;">
+          서울시 마포구 연남로 24, 1층<br>
+          경의선숲길 끝, 흰 건물 1층.<br>
+          창밖으로 나무가 보이는 곳입니다.
+        </p>
+        <ul style="margin-top:var(--sm);">
+          <li>02-1234-5678</li>
+          <li>hello@coraltree.cafe</li>
+          <li>카카오톡 채널 @산호나무</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Follow</h3>
+        <!-- [지어냄] SNS 계정 -->
+        <ul>
+          <li><a href="https://instagram.com/coraltree_cafe">인스타그램 @coraltree_cafe</a></li>
+          <li><a href="#">유튜브 산호나무 TV</a></li>
+          <li><a href="#">블로그 blog.coraltree.cafe</a></li>
+        </ul>
+        <p class="foot-note">여행 나무에 새로 열린 사진과 사연,<br>사장님이 다녀온 여행지 영상을 올립니다.</p>
+      </div>
+    </div>
+    <div class="copyright">© 산호나무 &nbsp;·&nbsp; 가게 이름·가격·연락처는 아직 정해지지 않은 가상의 정보입니다</div>
+  </div>
+</footer>
+
+</div><!-- /postcard-frame -->
+
+<script src="app.js"></script>
+</body>
+</html>
