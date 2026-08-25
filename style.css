@@ -904,3 +904,18 @@ nav.topbar.tucked{transform:translateY(-100%);}
 /* 실제 사진이 들어간 자리는 안내 문구를 숨깁니다 */
 .photo:has(img) .cap,
 .photo:has(img) > .ico{display:none;}
+
+/* ---------- 브랜드 로고 ----------
+   시안 로고(흰 배경 PNG)에서 산호나무 심볼 부분만 잘라 씁니다.
+   multiply 로 흰 배경을 종이색에 녹입니다.                      */
+.brand .logo{
+  position:relative;overflow:hidden;
+  width:36px;height:36px;flex:0 0 36px;
+}
+.brand .logo img{
+  position:absolute;
+  width:228%;height:228%;
+  left:-64%;top:-44%;
+  max-width:none;
+  mix-blend-mode:multiply;
+}
