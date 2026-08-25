@@ -919,3 +919,9 @@ nav.topbar.tucked{transform:translateY(-100%);}
   max-width:none;
   mix-blend-mode:multiply;
 }
+
+/* 새로 들어온 사진의 크롭 위치 */
+.pos-matcha   img{transform:scale(1.35);transform-origin:33% 48%;}  /* 말차 라떼 잔 */
+.pos-map2     img{transform:scale(1.7);transform-origin:79% 54%;}   /* 말차 사진의 오키나와 지도 */
+.pos-minitree img{transform:scale(2.5);transform-origin:79% 22%;}   /* 트레이 사진의 사진 나무 */
+.pos-tablet   img{transform:scale(2);transform-origin:40% 52%;}     /* 예약석 태블릿 화면 */
