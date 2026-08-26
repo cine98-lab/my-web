@@ -5,3 +5,6 @@ desktop.ini
 *.swp
 .vscode/
 .idea/
+
+# Vercel 로컬 연결 정보 (내 PC에만 있으면 됩니다)
+.vercel
